@@ -100,9 +100,6 @@ const Home = () => {
 					className={classes.businessListBox}
 				>
 					{businessList.map((business) => {
-						// random number for testing
-						let random = Math.floor(Math.random() * 1000);
-
 						return (
 							<Grid key={business._id} item xs={12} sm={6} md={4} lg={3}>
 								<AvailableBusinesses data={business} />

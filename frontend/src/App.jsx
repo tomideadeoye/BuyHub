@@ -24,7 +24,7 @@ export const routes = {
 		component: <ServicePurchase />,
 	},
 };
- 
+
 const App = () => {
 	return (
 		<Stack
@@ -39,11 +39,11 @@ const App = () => {
 					<Nav />
 					<Routes>
 						<Route path={routes.login.link} element={<Login />} />
-						<Route path={routes.home.link} element={<Home />} />
 						<Route
 							path={routes.ServicePurchase.link}
 							element={<ServicePurchase />}
 						/>
+						<Route path={routes.home.link} element={<Home />} />
 					</Routes>
 
 					<DefaultFooter />
