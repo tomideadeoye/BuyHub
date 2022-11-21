@@ -9,13 +9,20 @@ const {
 	createVirtualAccount,
 } = require("./generateEncryption");
 
-const { userCreator, fakeCoordinatesGenerator } = require("./src/helpers");
+const {
+	userCreator,
+	fakeCoordinatesGenerator,
+	deleteAll,
+	howManyUsers,
+} = require("./src/helpers");
 
 const cors = require("cors"); //Newly added
 const app = express();
 
+// userCreator();
 app.use(cors());
 app.use(express.json());
+howManyUsers();
 
 const User = require("./model/user"); // importing user context
 const auth = require("./middleware/auth");
@@ -125,14 +132,8 @@ app.post("/", async (req, res) => {
 
 app.post("/paylink", async (req, res) => {
 	const { business_name, item } = req.body;
-
-	try {
-		const paylink = await generatePaymentLink(business_name, item);
-
-		res.send(paylink);
-	} catch {
-		res.send("https://pay.seerbitapi.com/KennethDickiStorerj07k7o1y3YHSOSN");
-	}
+	const paylink = await generatePaymentLink(business_name, item);
+	res.send(paylink);
 });
 
 app.get("/virtualAccount", (req, res) => {

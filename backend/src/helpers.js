@@ -52,8 +52,29 @@ async function userCreator() {
 // 	User.updateMany({}, { $set: { inventory: [] } });
 // });
 
+async function deleteAll() {
+	try {
+		await User.deleteMany({});
+		console.log("All users deleted");
+		howManyUsers();
+	} catch (err) {
+		console.log(err);
+	}
+}
+
+async function howManyUsers() {
+	try {
+		const users = await User.find({});
+		console.log("Number of users is", users.length);
+	} catch (err) {
+		console.log(err);
+	}
+}
+
 module.exports = {
 	fakeProductsGenerator,
 	fakeCoordinatesGenerator,
 	userCreator,
+	deleteAll,
+	howManyUsers,
 };
