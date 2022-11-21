@@ -1,7 +1,7 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
-const baseURl = "http://localhost:4001";
+const baseURl = "https://buyhubhackathon.herokuapp.com";
 
 async function axiosCall(url, method, data) {
 	let headersList = {
