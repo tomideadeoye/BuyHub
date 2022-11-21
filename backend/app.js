@@ -112,7 +112,6 @@ app.post("/", async (req, res) => {
 		User.find({}, function (err, data) {
 			if (!err) {
 				res.send({ title: "All available businesses and products", data });
-				console.log(data.length);
 			} else {
 				throw err;
 			}
