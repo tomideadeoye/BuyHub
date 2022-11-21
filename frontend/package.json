@@ -1,7 +1,6 @@
 {
-	"name": "Web3notes",
+	"name": "BuyHub",
 	"version": "0.1.0",
-	"homepage": "https://tomideadeoye.github.io/",
 	"private": true,
 	"proxy": "http://localhost:4001",
 	"dependencies": {
